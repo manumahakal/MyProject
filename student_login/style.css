@@ -1,0 +1,14 @@
+body{
+    background-image:url("");
+  
+}
+nav{
+  background-color: white;
+}
+.logo{
+     margin-left:-100px;
+     margin-top:20px;
+}
+.navigation{
+     display:inline;
+}

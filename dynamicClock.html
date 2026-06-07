@@ -1,0 +1,75 @@
+<html> 
+<head> 
+<title>Digital Clock</title>
+<style>
+ body{
+ background:linear-gradient(to right,#a1c4fd,#c2e9fb);
+font-family:'Segoe UI', sans-serif;
+align-items : center;
+justify-content:center;
+display:flex;
+height:100vh;
+margin:0;
+}
+.container{
+   background-color:white;
+   padding:40px;
+   border-radius:1rem; 
+   box-shadow: 0 4px 20px rgba(0,0,0.1);
+   height:30vh;
+  text-align:center;   
+
+}
+#clock{
+font-size:3rem;
+margin:20px 0;
+
+}
+.btn{
+width:200px;
+height:50px;
+border:none;
+margin:10px;
+border-radius:1rem;
+background-color:#007bff;
+color:white ;
+font-size:1rem;
+cursor:pointer;
+
+}
+.btn:active{
+background-color:#0056b3;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div id ="clock">--------:---------</div>
+<input type="submit" class="btn"  onclick="startClock()" value="start clock" />
+<input type="submit" class="btn" onclick= "stopClock()" value="stop clock" />
+<button type="reset" class="btn"onclick="Reset()" >Reset</button>
+</div>
+</body>
+<script>
+ var timer;
+let startClock=()=>{
+if (!timer){
+updateTime();
+timer=setInterval(updateTime, 1000);
+}
+}
+let updateTime=()=>{
+var now = new Date();
+document.getElementById("clock").innerHTML=now.toLocaleTimeString();
+}
+let Reset = ()=>{
+document.getElementById("clock").disabled=false;
+}
+let stopClock=()=>{
+clearInterval(timer);
+timer=null;
+}
+</script>
+
+<html> 
